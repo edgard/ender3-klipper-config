@@ -1,0 +1,2 @@
+## rule to restart klipper when the printer is connected via usb
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="614e", ACTION=="add", RUN+="/bin/sh -c '/bin/echo RESTART > $(readlink /tmp/printer)'"
